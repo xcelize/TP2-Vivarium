@@ -3,6 +3,7 @@ import random
 from pygame.math import Vector2
 
 from BodyCarnivore import BodyCarnivore
+from BodyDecomposeur import BodyDecomposeur
 from BodyHerbivore import BodyHerbivore
 from BodySuperPredateur import BodySuperPredateur
 from Carnivore import Carnivore
@@ -69,7 +70,7 @@ def updateEnv():
                     if a.body.niveau_faim < 0:
                         a.body.niveau_faim = 0
 
-                if isinstance(a, Decomposeur) and c.body.dead and a.body.position.distance_to(
+                if isinstance(a, Decomposeur) and c.body.mort and a.body.position.distance_to(
                         c.body.position) <= a.body.mass:
                     core.memory("agents").remove(c)
                     a.body.niveau_faim -= 20
@@ -94,6 +95,9 @@ def reset():
 
     for i in range(0, core.memory("scenario")["Herbivore"]["nb"]):
         core.memory("agents").append(Herbivore(BodyHerbivore()))
+
+    for i in range(0, core.memory("scenario")["Decomposeur"]["nb"]):
+        core.memory("agents").append(Decomposeur(BodyDecomposeur()))
 
     for i in range(0, 10):
         core.memory("items").append(Item())
