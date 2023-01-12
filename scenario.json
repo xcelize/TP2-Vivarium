@@ -1,0 +1,107 @@
+{
+    "durÃ©eSimu": 300,
+    "SuperPredateur": {
+        "nb": 20,
+        "parametres": {
+            "vitesseMax": [
+                10,
+                30
+            ],
+            "accelerationMax": [
+                10,
+                30
+            ],
+            "faimMax": [
+                50,
+                100
+            ],
+            "fatigueMax": [
+                5,
+                7
+            ],
+            "reproductionMax": [
+                50,
+                100
+            ],
+            "esperanceVie": 100
+        }
+    },
+    "Carnivore": {
+        "nb": 30,
+        "parametres": {
+            "vitesseMax": [
+                10,
+                30
+            ],
+            "accelerationMax": [
+                10,
+                30
+            ],
+            "faimMax": [
+                50,
+                100
+            ],
+            "fatigueMax": [
+                5,
+                7
+            ],
+            "reproductionMax": [
+                50,
+                100
+            ],
+            "esperanceVie": 100
+        }
+    },
+    "Decomposeur": {
+        "nb": 50,
+        "parametres": {
+            "vitesseMax": [
+                10,
+                30
+            ],
+            "accelerationMax": [
+                10,
+                30
+            ],
+            "faimMax": [
+                50,
+                100
+            ],
+            "fatigueMax": [
+                5,
+                7
+            ],
+            "reproductionMax": [
+                50,
+                100
+            ],
+            "esperanceVie": 100
+        }
+    },
+    "Herbivore": {
+        "nb": 12,
+        "parametres": {
+            "vitesseMax": [
+                10,
+                30
+            ],
+            "accelerationMax": [
+                10,
+                30
+            ],
+            "faimMax": [
+                5,
+                7
+            ],
+            "fatigueMax": [
+                50,
+                100
+            ],
+            "reproductionMax": [
+                50,
+                100
+            ],
+            "esperanceVie": 100
+        }
+    }
+}
