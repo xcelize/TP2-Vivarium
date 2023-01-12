@@ -57,13 +57,7 @@ def updateEnv():
                 if isinstance(a, SuperPredateur) and isinstance(c, Carnivore) and a.body.position.distance_to(
                         c.body.position) <= a.body.mass:
                     c.body.mort = True
-                    a.body.niveau_faim -= 20
-                    if a.body.niveau_faim < 0:
-                        a.body.niveau_faim = 0
-
-                if isinstance(a, Decomposeur) and c.body.dead and a.body.position.distance_to(
-                        c.body.position) <= a.body.mass:
-                    core.memory("agents").remove(c)
+                    print(c.body.mort)
                     a.body.niveau_faim -= 20
                     if a.body.niveau_faim < 0:
                         a.body.niveau_faim = 0
@@ -75,7 +69,19 @@ def updateEnv():
                     if a.body.niveau_faim < 0:
                         a.body.niveau_faim = 0
 
+                if isinstance(a, Decomposeur) and c.body.dead and a.body.position.distance_to(
+                        c.body.position) <= a.body.mass:
+                    core.memory("agents").remove(c)
+                    a.body.niveau_faim -= 20
+                    if a.body.niveau_faim < 0:
+                        a.body.niveau_faim = 0
 
+        for c in core.memory("items"):
+            if isinstance(a, Herbivore) and a.body.position.distance_to(c.position) <= a.body.mass:
+                core.memory("items").remove(c)
+                a.body.niveau_faim -= 20
+                if a.body.niveau_faim < 0:
+                    a.body.niveau_faim = 0
 def reset():
     core.memory("agents", [])
     core.memory("items", [])
@@ -89,7 +95,7 @@ def reset():
     for i in range(0, core.memory("scenario")["Herbivore"]["nb"]):
         core.memory("agents").append(Herbivore(BodyHerbivore()))
 
-    for i in range(0, 5):
+    for i in range(0, 10):
         core.memory("items").append(Item())
 
     # TODO: Add other items
