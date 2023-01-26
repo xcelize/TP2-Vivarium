@@ -31,7 +31,7 @@
         "parametres": {
             "vitesseMax": [
                 10,
-                45
+                55
             ],
             "accelerationMax": [
                 10,
@@ -82,8 +82,8 @@
         "nb": 20,
         "parametres": {
             "vitesseMax": [
-                50,
-                60
+                10,
+                20
             ],
             "accelerationMax": [
                 10,
